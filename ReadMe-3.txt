@@ -1,0 +1,2 @@
+# 1 [repo & code template] folders: docs (info of prj) / dockerfiles (dev-stage-production) / envs (environment variables in dev-stage-production) / core (app code)
+# 2 [dockerfile & docker-compose.yml] 
