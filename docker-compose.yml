@@ -10,15 +10,22 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    expose:
+      - 5432
     restart: always
 
   backend:
     container_name: backend
-    image:
+    build:
       context: .
       dockerfile: ./dockerfiles/dev/django/Dockerfile
     volumes: 
       - ./core:/usr/src/app
+    working_dir: /usr/src/app
+    # command: django-admin startproject core . # only for first build docker compose
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
     environment:
       - DEBUG=True
     restart: always
