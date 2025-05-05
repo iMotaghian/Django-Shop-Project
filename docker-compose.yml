@@ -12,6 +12,8 @@ services:
       - POSTGRES_PASSWORD=postgres
     expose:
       - 5432
+    #ports:
+    #  - 5432:5432
     restart: always
 
   backend:
@@ -23,15 +25,20 @@ services:
       - ./core:/usr/src/app
     working_dir: /usr/src/app
     # command: django-admin startproject core . # only for first build docker compose
-    command: python manage.py runserver 0.0.0.0:8000
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: bash
     ports:
       - 8000:8000
     environment:
       - DEBUG=True
+    env_file:
+      - ./envs/dev/django/.env
     restart: always
     depends_on:
       - db
-      
+    tty: true
+    stdin_open: true
+
   smtp4dev:
     image: rnwood/smtp4dev:v3
     restart: always

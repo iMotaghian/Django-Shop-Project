@@ -1,5 +1,7 @@
-# main
-Django>4.2,<4.3
-
-# DB
-psycopg[binary]
+asgiref==3.8.1
+Django==4.2.20
+psycopg==3.2.7
+psycopg-binary==3.2.7
+python-decouple==3.8
+sqlparse==0.5.3
+typing_extensions==4.13.2
