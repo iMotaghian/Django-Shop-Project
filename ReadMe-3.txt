@@ -12,4 +12,8 @@ docker compose up --build
 docker compose up --build
 # -> http://127.0.0.1:8000/
 
-# 4 []
+# 4 [devcontainer] install extensions "dev container" - Visual Studio Code Dev Containers
+# click on "><" in left bottom of VScode >  top of VScode select "Attach to Running Container..." > and select "backend" > see open new VScode in backend
+# open explore and click on "Open Folder" > back one folder and go to "/usr/src/app/" and press "OK" // need install python in container
+pip freeze > requirements.txt
+# create new "requirements.txt" in core
