@@ -21,12 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-s+b4*$@=ofl#t)pfw=a=gy)s=_+_s-n0@9hlmb4&i^jtf69#&l'
-SECRET_KEY = config("SECRET_KEY", default='django-insecure-s+b4*$@=ofl#t)pfw=a=gy)s=_+_s-n0@9hlmb4&i^jtf69#&l')
+SECRET_KEY = config(
+    "SECRET_KEY", default='django-insecure-s+b4*$@=ofl#t)pfw=a=gy)s=_+_s-n0@9hlmb4&i^jtf69#&l')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG",cast=bool,default=True)
+DEBUG = config("DEBUG", cast=bool, default=True)
 
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast= lambda v: [item.strip() for item in v.split(',')] ,default="*")
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=lambda v: [
+                       item.strip() for item in v.split(',')], default="*")
 
 
 # Application definition
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'website',
 ]
 
 MIDDLEWARE = [
@@ -77,11 +80,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config("PGDB_NAME",default='postgres'),                      
-        'USER': config("PGDB_USER",default='postgres'),
-        'PASSWORD': config("PGDB_PASSWORD",default='postgres'),
-        'HOST': config("PGDB_HOST",default='db'),
-        'PORT': config("PGDB_PORT", cast=int,default=5432),
+        'NAME': config("PGDB_NAME", default='postgres'),
+        'USER': config("PGDB_USER", default='postgres'),
+        'PASSWORD': config("PGDB_PASSWORD", default='postgres'),
+        'HOST': config("PGDB_HOST", default='db'),
+        'PORT': config("PGDB_PORT", cast=int, default=5432),
     }
 }
 
@@ -110,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = config("TIME_ZONE",default="UTC")
+TIME_ZONE = config("TIME_ZONE", default="UTC")
 
 USE_I18N = True
 
@@ -126,7 +129,7 @@ MEDIA_URL = 'media/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-STATICFILES_DIRS =  [
+STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
@@ -136,16 +139,17 @@ STATICFILES_DIRS =  [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = config("EMAIL_HOST",default="smtp4dev")
-EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool ,default=False)
-EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool ,default=False)
-EMAIL_PORT = config("EMAIL_PORT", cast=int,default=25)
-EMAIL_HOST_USER = config("EMAIL_HOST_USER",default="")
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD",default="")
+EMAIL_HOST = config("EMAIL_HOST", default="smtp4dev")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=False)
+EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool, default=False)
+EMAIL_PORT = config("EMAIL_PORT", cast=int, default=25)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
 
 
 # django debug toolbar for docker usage
-SHOW_DEBUGGER_TOOLBAR = config("SHOW_DEBUGGER_TOOLBAR", cast=bool, default=True)
+SHOW_DEBUGGER_TOOLBAR = config(
+    "SHOW_DEBUGGER_TOOLBAR", cast=bool, default=True)
 if SHOW_DEBUGGER_TOOLBAR:
     INSTALLED_APPS += [
         "debug_toolbar",
@@ -155,4 +159,5 @@ if SHOW_DEBUGGER_TOOLBAR:
     ]
     import socket  # only if you haven't already imported this
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
+    INTERNAL_IPS = [
+        ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
