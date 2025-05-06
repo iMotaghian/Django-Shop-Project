@@ -18,7 +18,7 @@ docker compose up --build
 pip freeze > requirements.txt
 # create new "requirements.txt" in core
 
-# 5 [add environment variable] Continue code in dev container (><) / dir: "/usr/src/app/"
+# 5 [add environment variable] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000" > dir: "/usr/src/app/"
 # in docker-compose.yml change backend command "runserver" to "bash"
 python manage.py runserver 0.0.0.0:8000
 # use "python-decouple" for set environment -> https://pypi.org/project/python-decouple/
@@ -35,6 +35,9 @@ python manage.py makemigrations
 python manage.py migrate
 # for check DB install extension > Database Client -> https://marketplace.visualstudio.com/items/?itemName=cweijan.vscode-database-client2
 # and set "ports: - 5432:5432" for DB services , after we can connect to DB with "Database Client"
+
+# 6 [Setup project] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000" /// pip install django-debug-toolbar
+# for active DEBUGGER_TOOLBAR set in settings.py > "SHOW_DEBUGGER_TOOLBAR = config("SHOW_DEBUGGER_TOOLBAR", cast=bool, default=True)" /// add url > core/urls.py
 
 
 

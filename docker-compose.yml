@@ -25,7 +25,7 @@ services:
       - ./core:/usr/src/app
     working_dir: /usr/src/app
     # command: django-admin startproject core . # only for first build docker compose
-    # command: python manage.py runserver 0.0.0.0:8000
+    # command: python manage.py runserver 0.0.0.0:8000 # for dev container use bash
     command: bash
     ports:
       - 8000:8000
