@@ -39,6 +39,8 @@ python manage.py migrate
 # 6 [Setup project] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000" /// pip install django-debug-toolbar
 # for active DEBUGGER_TOOLBAR set in settings.py > "SHOW_DEBUGGER_TOOLBAR = config("SHOW_DEBUGGER_TOOLBAR", cast=bool, default=True)" /// add url > core/urls.py
 
+# 7 [what is online shop] /// 8 [docs] -> https://www.drawio.com/ /// 9 [DB design] /// 10 [DB review]
+
 
 
 
