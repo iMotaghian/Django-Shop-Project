@@ -15,10 +15,11 @@ python manage.py startapp website
 # replace address of file in code > example: "/assets/css/vendor.min.css" >>> "{% static 'css/vendor.min.css' %}"
 # insert content from "Front RTL index.html" (<main></main>) >> template/index.html
 
-
-
-
-
+# 3 [Accounting - User Model] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000"
+# make accounts app
+python manage.py startapp accounts
+# make urls.py in "accounts" and fill it
+# update accounts/models.py   /// make accounts/validators.py 
 
 
 
