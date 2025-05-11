@@ -38,7 +38,14 @@ python manage.py createsuperuser
 # set user id and profile id became equal > in accounts/models.py add "pk=instance.pk" in "@receiver" > Profile.objects.create(user=instance, pk=instance.pk)
 # make class admin for profile
 
-# 6 []
+# 6 [Accounting URLs & Login Page] add "accounts" app to core/urls.py > path('accounts/', include('accounts.urls'))
+# make accounts/urls.py > add "login", " register" and "logout" view in paths also in accounts/views.py /// also we can use path('',include('django.contrib.auth.urls')) in accounts/urls
+# make forms.py in "accounts" folder /// in views.py > LoginView /// in template make "accounts" folder & login.html
+# make class AuthenticationForm in forms.py /// update login.html
+# login.html > add "action" , "method" in <form>  > change name="email" to name="username" in input >  and {% csrf_token %}
+
+# 7 []
+
 
 
 
