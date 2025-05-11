@@ -72,6 +72,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Profile(models.Model):
+    #id = models.BigIntegerField(primary_key=True)
     user = models.OneToOneField('User', on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -80,12 +81,12 @@ class Profile(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
-    #def __str__(self):
-        #return self.user.email
+    def __str__(self):
+        return self.user.email
 
 
 # # create new profle after create a new user
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created and instance.type == UserType.customer.value:
-        Profile.objects.create(user=instance)
+        Profile.objects.create(user=instance, pk=instance.pk)

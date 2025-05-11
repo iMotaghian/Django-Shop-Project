@@ -1,3 +1,5 @@
+# [Set Bash] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000" /// OR /// docker-compose exec backend sh
+
 # 1 [website app - create pages] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000"
 # create "website" django application in backend service
 python manage.py startapp website
@@ -31,7 +33,12 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 
-# 5 []
+# 5 [Create Admin for User & Profile] go to accounts/admin.py /// use from "django-blog"
+# add "type" to "Group Permissions" and "add_fieldsets" in admin.py
+# set user id and profile id became equal > in accounts/models.py add "pk=instance.pk" in "@receiver" > Profile.objects.create(user=instance, pk=instance.pk)
+# make class admin for profile
+
+# 6 []
 
 
 
@@ -39,7 +46,7 @@ python manage.py createsuperuser
 
 
 
-docker-compose exec backend sh
+
 
 
 
