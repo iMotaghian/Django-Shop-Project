@@ -22,6 +22,10 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+
+  <!-- CSS Toastify -->
+  <link rel="stylesheet" href="{% static 'vendor/toastify/toastify.css' %}">
+
     {% block extra_css %} {% endblock %}
 
     {% block extra_css_no_compress %} {% endblock %}
@@ -464,6 +468,9 @@
   <!-- JS Front -->
   <script src="{% static 'js/theme.min.js' %}"></script>
 
+  <!-- JS Toastify -->  
+  <script src="{% static 'vendor/toastify/toastify.js' %}"></script>
+
   <!-- JS Plugins Init. -->
   <script>
     (function () {
@@ -568,6 +575,7 @@
   {% block extra_js %} {% endblock %}
 
   {% block extra_js_no_compress %} {% endblock %}
+ {% include 'messages.html' %}
 </body>
 
 </html>

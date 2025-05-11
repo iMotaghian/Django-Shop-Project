@@ -44,8 +44,16 @@ python manage.py createsuperuser
 # make class AuthenticationForm in forms.py /// update login.html
 # login.html > add "action" , "method" in <form>  > change name="email" to name="username" in input >  and {% csrf_token %}
 
-# 7 []
+# 7 [show error with toastify JS and set REDIRECT] show error in html "{% if messages %}" add to "{% block content %}" -> https://gist.github.com/adamghill/8246816
+# other way: make messages.html in template and add it ro base.html
+# for show alarms > Toastify JS -> https://apvarun.github.io/toastify-js/ & https://github.com/apvarun/toastify-js/blob/master/README.md
+# download from https://github.com/apvarun/toastify-js/tree/master and copy "src" to project > "core/static/vendor/" and rename to toastify
+# add to base.html in <script> >  <script src="{% static 'vendor/toastify/toastify.js' %}"></script>
+# add to base.html in <link> CSS > <link rel="stylesheet" href="{% static 'vendor/toastify/toastify.css' %}">
+# edit messages.html for add Toastify JS code > <script>
+# add "LOGIN_REDIRECT_URL = '/'" to settings.py
 
+# 8 []
 
 
 
