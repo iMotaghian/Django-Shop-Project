@@ -21,8 +21,25 @@ python manage.py startapp accounts
 # make urls.py in "accounts" and fill it
 # update accounts/models.py   /// make accounts/validators.py 
 
+# 4 [Profile model & AUTH_USER_MODEL] Continue code in "backend" dev container (><) > "python manage.py runserver 0.0.0.0:8000"
+# add "@receiver(post_save, sender=User)" to accounts/models and add "accounts" to settings INSTALLED_APPS
+# after creating custom user model in settings we should set AUTH method (AUTH_USER_MODEL)
+# need migration but we cant set makemigrations for twist for User models, so we must deleted DB and after it set makemigrations
+# for delete PostgreSQL first down postgres service and delete "data" folder on "postgres" folder and restart postgres service
+# in bash:
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+
+# 5 []
 
 
+
+
+
+
+
+docker-compose exec backend sh
 
 
 

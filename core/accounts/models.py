@@ -71,7 +71,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-class CustomerProfile(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField('User', on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -85,7 +85,7 @@ class CustomerProfile(models.Model):
 
 
 # # create new profle after create a new user
-#@receiver(post_save, sender=User)
-#def save_profile(sender, instance, created, **kwargs):
-    #if created:
-        #Profile.objects.create(user=instance)
+@receiver(post_save, sender=User)
+def create_profile(sender, instance, created, **kwargs):
+    if created and instance.type == UserType.customer.value:
+        Profile.objects.create(user=instance)
