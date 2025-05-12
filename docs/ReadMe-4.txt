@@ -56,8 +56,12 @@ python manage.py createsuperuser
 # 8 [log out management] in accounts/urls.py > path('logout', views.LogoutView.as_view(), name='logout') /// and views.py > LogoutView
 # set "LOGOUT_REDIRECT_URL" in "settings.py" for after log our direction page
 
-# 9 []
+# 9 [Set address to homepage Button] go to base.html and edit > "<a class="nav-link active" href="/index.html">صفحه اصلی</a>" > {% url 'website:index' %}
+# "class="btn btn-primary btn-transition" > {% url 'accounts:login' %}
+# open "HTML-Shop-Template" and copy code that when user is login form card.html > <a class="" href="./account-home.html"> ....
+# use "{% if request.user.is_authenticated %}" for login our logout Button
 
+# 10 []
 
 
 
