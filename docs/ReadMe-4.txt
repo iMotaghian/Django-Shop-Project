@@ -61,7 +61,7 @@ python manage.py createsuperuser
 # open "HTML-Shop-Template" and copy code that when user is login form card.html > <a class="" href="./account-home.html"> ....
 # use "{% if request.user.is_authenticated %}" for login our logout Button
 
-# 10 []
+# 10 [Design accounting Button] make HTML code for user profile and logout
 
 
 
