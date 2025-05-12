@@ -53,7 +53,10 @@ python manage.py createsuperuser
 # edit messages.html for add Toastify JS code > <script>
 # add "LOGIN_REDIRECT_URL = '/'" to settings.py
 
-# 8 []
+# 8 [log out management] in accounts/urls.py > path('logout', views.LogoutView.as_view(), name='logout') /// and views.py > LogoutView
+# set "LOGOUT_REDIRECT_URL" in "settings.py" for after log our direction page
+
+# 9 []
 
 
 
