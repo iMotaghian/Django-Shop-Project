@@ -36,7 +36,7 @@
       <div class="container">
         <nav class="js-mega-menu navbar-nav-wrap">
           <!-- Default Logo -->
-          <a class="navbar-brand" href="/index.html" aria-label="Front">
+          <a class="navbar-brand" href="{% url 'website:index' %}" aria-label="Front">
             <img class="navbar-brand-logo" src="{% static 'svg/logos/logo.svg' %}" alt="Logo">
           </a>
           <!-- End Default Logo -->
@@ -59,8 +59,9 @@
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'website:index' %}">صفحه اصلی</a>
               </li>
+            
   
-              <!-- Dropdown -->
+              <!--< Dropdown >
               <li class="hs-has-sub-menu nav-item">
                 <a id="listingsDropdown" class="hs-mega-menu-invoker nav-link dropdown-toggle " href="#" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">لیست محصولات</a>
@@ -69,13 +70,19 @@
                   <a class="dropdown-item " href="/products-grid.html">فهرست (شبکه)</a>
                 </div>
               </li>
-              <!-- End Dropdown -->
-  
+              < End Dropdown >-->
+
               <li class="nav-item">
-                <a class="nav-link " href="/product-overview.html">بررسی اجمالی محصولات</a>
+                <a class="nav-link " href="{% url 'shop:product-grid' %}">لیست محصولات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'website:about' %}">درباه ما</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'website:contact' %}">ارتباط با ما</a>
               </li>
   
-              <!-- Pages -->
+              <!--<! Pages >
               <li class="hs-has-mega-menu nav-item" data-hs-mega-menu-item-options='{
                     "desktop": {
                       "position": "right",
@@ -85,7 +92,7 @@
                 <a id="pagesMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle " aria-current="page" href="#"
                   role="button" data-bs-toggle="dropdown" aria-expanded="false">صفحات</a>
   
-                <!-- Mega Menu -->
+                <! Mega Menu >
                 <div class="hs-mega-menu dropdown-menu" aria-labelledby="pagesMegaMenu" style="min-width: 27rem;">
                   <div class="navbar-dropdown-menu-inner">
                     <span class="dropdown-header">عناصر</span>
@@ -96,19 +103,19 @@
                         <a class="dropdown-item " href="/categories-sidebar.html">نوار کناری دسته ها</a>
                         <a class="dropdown-item " href="/empty-cart.html">سبد خالی</a>
                       </div>
-                      <!-- End Col -->
+                      <! End Col >
   
                       <div class="col-sm">
                         <a class="dropdown-item " href="/cart.html">سبد خرید</a>
                         <a class="dropdown-item " href="/checkout.html">بررسی</a>
                         <a class="dropdown-item " href="/order-completed.html">سفارش تکمیل شد</a>
                       </div>
-                      <!-- End Col -->
+                      <! End Col >
                     </div>
-                    <!-- End Row -->
+                    <! End Row >
                   </div>
   
-                  <!-- Mega Menu Banner -->
+                  <! Mega Menu Banner >
                   <div class="navbar-dropdown-menu-shop-banner">
                     <div class="d-flex">
                       <div class="flex-shrink-0">
@@ -124,11 +131,11 @@
                       </div>
                     </div>
                   </div>
-                  <!-- End Mega Menu Banner -->
+                  <! End Mega Menu Banner >
                 </div>
-                <!-- End Mega Menu -->
+                <! End Mega Menu >
               </li>
-              <!-- End Pages -->
+              <! End Pages >-->
   
               <li class="nav-item">
                 <!-- Search -->
@@ -183,12 +190,12 @@
         <div class="col-lg-3 mb-5">
           <div class="d-flex align-items-start flex-column h-100">
             <!-- Logo -->
-            <a class="w-100 mb-3 mb-lg-auto" href="/index.html" aria-label="Front">
+            <a class="w-100 mb-3 mb-lg-auto" href="{% url 'website:index' %}" aria-label="Front">
               <img class="brand" src="{% static 'svg/logos/logo.svg' %}" alt="Logo">
             </a>
             <!-- End Logo -->
 
-            <p class="text-muted small mb-0">&copy; Maryam Farajian 2023 Front RTL</p>
+            <p class="text-muted small mb-0">&copy; 2025 Front</p>
           </div>
         </div>
 
