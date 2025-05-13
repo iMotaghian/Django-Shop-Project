@@ -19,6 +19,9 @@ python -m pip install Pillow
 python manage.py makemigrations
 python manage.py migrate
 
+# 3 [shop admin view] open shop/admin.py and make ProductModelAdmin,ProductCategoryModelAdmin,ProductImageModelAdmin
+# for add to admin we can use old way in "accounts/admin" or use special decorative "@admin.register(ProductModel)" before related class (Inheritance class of model)
+
 
 
 
