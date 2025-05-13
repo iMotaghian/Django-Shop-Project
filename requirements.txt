@@ -1,9 +1,11 @@
 asgiref==3.8.1
 Django==4.2.20
 django-debug-toolbar==5.2.0
+Faker==37.1.0
+pillow==11.2.1
 psycopg==3.2.7
 psycopg-binary==3.2.7
 python-decouple==3.8
 sqlparse==0.5.3
 typing_extensions==4.13.2
-pillow==11.2.1
+tzdata==2025.2

@@ -22,8 +22,14 @@ python manage.py migrate
 # 3 [shop admin view] open shop/admin.py and make ProductModelAdmin,ProductCategoryModelAdmin,ProductImageModelAdmin
 # for add to admin we can use old way in "accounts/admin" or use special decorative "@admin.register(ProductModel)" before related class (Inheritance class of model)
 
-
-
+# 4 [make data by Faker] in "shop" folder make dir > management/commands/generate_products.py, generate_categories.py & __init__.py
+# install faker with bash
+pip install faker
+# make commands class for generate_categories.py and run it in bash
+python manage.py generate_categories
+# make images folder in shop/management/commands and copy img in to folder
+# make commands class for generate_products.py and run it in bash
+python manage.py generate_products
 
 
 
