@@ -32,6 +32,13 @@ python manage.py generate_categories
 python manage.py generate_products
 
 
+# 5 [Show Product List in template] edit product-grid.html and also this view "ShopProductGridView"
+# use "{% for object in object_list %}{% endfor %}" for loop of item
+# "{% for category in object.category.all %}" > because category is Many To Many 
+# "{% if not forloop.last %}" > in last for loop don't work
+# for price use "{{object.get_price}}" > get_price make in related model and this function can calculate discount of price // (from decimal import Decimal)
+
+# 6 []
 
 
 
