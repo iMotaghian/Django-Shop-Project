@@ -10,9 +10,14 @@ python manage.py startapp shop
 # for "template_name = "shop/products-grid.html" > make new "shop" folder in template folder and make "products-grid.html"
 # form "HTML-Shop-Template" open "products-grid.html" and copy code to "shop/products-grid.html"
 
-# 2 []
-
-
+# 2 [Shop ORM] open shop/models.py
+# on_delete=models.PROTECT > if user deleted all data of user are safe and dont deleted
+# allow_unicode=True > can use other language
+# because we use image in database we should install pillow in bash
+python -m pip install Pillow
+# now we make migration in bash
+python manage.py makemigrations
+python manage.py migrate
 
 
 
